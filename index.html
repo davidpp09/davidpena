@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demos de automatización · David Peña</title>
+  <meta name="description" content="Cuatro automatizaciones con IA que puedes probar aquí mismo: pedidos por WhatsApp, preguntas a documentos, tickets a datos y un agente que llena el CRM.">
+  <meta name="theme-color" content="#f8f4f5">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231c0f16'/><text x='16' y='23' font-size='19' font-family='Georgia' fill='%23f7f6f2' text-anchor='middle'>D</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script type="module" src="js/main.js?v=3"></script>
+  <script>
+    // Luz que sigue al mouse, igual que en el portafolio.
+    if (matchMedia('(pointer: fine)').matches) {
+      addEventListener('pointermove', (e) => {
+        document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+        document.documentElement.style.setProperty('--my', e.clientY + 'px');
+      }, { passive: true });
+    }
+  </script>
+</head>
+<body>
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#">David Peña</a>
+      <nav class="top__nav" aria-label="Secciones">
+        <a href="#demos">Demos</a>
+        <a href="#como-trabajo">Cómo trabajo</a>
+        <a href="sobre-mi/">Sobre mí</a>
+        <a class="btn btn--dark btn--sm" href="https://wa.me/525537215924?text=Hola%20David%2C%20vi%20tus%20demos" target="_blank" rel="noopener">Agendar diagnóstico</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <!-- Aquí irá la máquina isométrica hecha con la skill anatomy. -->
+      <span class="eyebrow">Automatización con IA para PyMEs</span>
+      <h1>IA que hace el <em>trabajo manual</em> de tu negocio</h1>
+      <p class="hero__lead">Automatizo pedidos, documentos, gastos y seguimiento de clientes. Pruébalo aquí mismo con los datos de un negocio de ejemplo.</p>
+      <div class="hero__actions">
+        <a class="btn btn--dark" href="#demos">Probar las demos</a>
+        <a class="btn btn--line" href="https://wa.me/525537215924?text=Hola%20David%2C%20vi%20tus%20demos" target="_blank" rel="noopener">Agendar diagnóstico</a>
+      </div>
+    </section>
+
+    <section class="showcase wrap" id="demos" aria-label="Demos">
+      <header class="showcase__head">
+        <span class="eyebrow">Demos</span>
+        <h2>Casos de uso que puedes <em>probar</em></h2>
+        <p>Todos trabajan con <strong>Distribuidora La Esperanza</strong>, una distribuidora de desechables por mayoreo. Las reglas cuadran entre sí: el envío gratis del manual es el mismo que aplica el pedido.</p>
+      </header>
+
+      <div class="window">
+      <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>demos · Distribuidora La Esperanza</span></div>
+      <div class="window__body">
+    <div class="tabs" role="tablist" aria-label="Demos">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="demo-pedidos" id="tab-pedidos">
+        <span class="tab__k">01</span><span class="tab__t">Pedidos por WhatsApp</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="demo-rag" id="tab-rag" tabindex="-1">
+        <span class="tab__k">02</span><span class="tab__t">Pregúntale a tus documentos</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="demo-ticket" id="tab-ticket" tabindex="-1">
+        <span class="tab__k">03</span><span class="tab__t">Ticket a contabilidad</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="demo-crm" id="tab-crm" tabindex="-1">
+        <span class="tab__k">04</span><span class="tab__t">Agente que llena el CRM</span>
+      </button>
+    </div>
+
+    <!-- 01 · Pedidos por WhatsApp -->
+    <section class="demo" id="demo-pedidos" role="tabpanel" aria-labelledby="tab-pedidos">
+      <div class="demo__head">
+        <div>
+          <h2>Un mensaje desordenado se vuelve un pedido</h2>
+          <p>Escribe como escribiría un cliente por WhatsApp: con faltas, sin formato, todo junto. El sistema arma el pedido, revisa existencias y le contesta.</p>
+        </div>
+        <ol class="flow" data-flow>
+          <li>Mensaje</li><li>Entender</li><li>Validar catálogo</li><li>Crear pedido</li><li>Inventario</li><li>Responder</li>
+        </ol>
+      </div>
+
+      <div class="demo__body">
+        <div class="pane pane--chat">
+          <div class="pane__bar"><span class="pane__title">WhatsApp · Distribuidora La Esperanza</span></div>
+          <div class="chat" data-chat aria-live="polite">
+            <div class="msg msg--bot">Hola 👋 ¿Qué te mandamos hoy?</div>
+          </div>
+          <div class="presets">
+            <button type="button" class="chip" data-preset="Hola buenas, me mandas 3 paquetes de vasos termicos, 2 de platos y una caja de tenedores pa mañana a las 5, pago con transferencia. Soy Juan">Pedido normal</button>
+            <button type="button" class="chip" data-preset="oye me urgen 10 contenedores y media docena de serbilletas, y 2 kilos de bolsa camiseta, hoy si se puede">Con faltas y prisa</button>
+            <button type="button" class="chip" data-preset="quiero 4 basos, 3 cucharas y 2 cajas de chicles plis, el viernes, con factura">Producto que no hay</button>
+          </div>
+          <form class="composer" data-form>
+            <label class="sr-only" for="wa-input">Mensaje del cliente</label>
+            <textarea id="wa-input" rows="2" placeholder="Escribe un pedido como cliente…"></textarea>
+            <button class="btn btn--signal" type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <div class="pane pane--system">
+          <div class="pane__bar"><span class="pane__title">Sistema de pedidos</span><button type="button" class="link" data-reset>Reiniciar inventario</button></div>
+          <div class="system" data-out>
+            <p class="empty">Aquí aparece el pedido en cuanto llegue un mensaje.</p>
+          </div>
+          <div class="inventory">
+            <h3 class="mini">Inventario</h3>
+            <div class="table-scroll"><table class="table" data-inv></table></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · RAG -->
+    <section class="demo" id="demo-rag" role="tabpanel" aria-labelledby="tab-rag" hidden>
+      <div class="demo__head">
+        <div>
+          <h2>Pregúntale a los documentos del negocio</h2>
+          <p>El asistente solo responde con lo que dicen los documentos y te enseña de dónde lo sacó. Si no está escrito, no lo inventa.</p>
+        </div>
+        <ol class="flow" data-flow>
+          <li>Pregunta</li><li>Buscar</li><li>Elegir fragmentos</li><li>Responder con fuente</li>
+        </ol>
+      </div>
+
+      <div class="demo__body">
+        <div class="pane pane--docs">
+          <div class="pane__bar"><span class="pane__title">Documentos</span><span class="pane__meta" data-doc-count></span></div>
+          <ul class="docs" data-docs></ul>
+        </div>
+
+        <div class="pane pane--chat">
+          <div class="pane__bar"><span class="pane__title">Asistente</span></div>
+          <div class="chat" data-chat aria-live="polite">
+            <div class="msg msg--bot">Pregúntame sobre envíos, devoluciones, pagos, descuentos u horarios.</div>
+          </div>
+          <div class="presets">
+            <button type="button" class="chip" data-preset="¿Cuánto cuesta el envío?">¿Cuánto cuesta el envío?</button>
+            <button type="button" class="chip" data-preset="¿Puedo devolver algo que ya abrí?">¿Devuelvo algo abierto?</button>
+            <button type="button" class="chip" data-preset="¿Me dan descuento si compro 15 paquetes?">¿Descuento por 15 paquetes?</button>
+            <button type="button" class="chip" data-preset="¿Abren en domingo?">¿Abren en domingo?</button>
+            <button type="button" class="chip" data-preset="¿Venden pizzas?">¿Venden pizzas?</button>
+          </div>
+          <form class="composer" data-form>
+            <label class="sr-only" for="rag-input">Pregunta</label>
+            <textarea id="rag-input" rows="1" placeholder="Escribe tu pregunta…"></textarea>
+            <button class="btn btn--signal" type="submit">Preguntar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="pane pane--frags">
+        <div class="pane__bar"><span class="pane__title">Fragmentos que encontró</span><span class="pane__meta">ordenados por relevancia</span></div>
+        <div class="frags" data-frags><p class="empty">Haz una pregunta para ver qué partes de los documentos usa.</p></div>
+      </div>
+    </section>
+
+    <!-- 03 · Ticket -->
+    <section class="demo" id="demo-ticket" role="tabpanel" aria-labelledby="tab-ticket" hidden>
+      <div class="demo__head">
+        <div>
+          <h2>De la foto del ticket a la contabilidad</h2>
+          <p>Elige un ticket. El sistema lo lee, saca los datos, clasifica el gasto y lo registra sin que nadie capture nada.</p>
+        </div>
+        <ol class="flow" data-flow>
+          <li>Foto</li><li>Leer</li><li>Extraer datos</li><li>Clasificar</li><li>Registrar</li>
+        </ol>
+      </div>
+
+      <div class="ticket-picker" data-picker></div>
+
+      <div class="demo__body">
+        <div class="pane pane--receipt">
+          <div class="pane__bar"><span class="pane__title">Foto del ticket</span></div>
+          <div class="receipt-stage" data-receipt></div>
+          <div class="pane__foot"><button class="btn btn--signal" type="button" data-scan>Leer ticket</button></div>
+        </div>
+
+        <div class="pane pane--system">
+          <div class="pane__bar"><span class="pane__title">Datos extraídos</span></div>
+          <dl class="fields" data-fields><p class="empty">Pulsa «Leer ticket».</p></dl>
+          <div class="ledger">
+            <h3 class="mini">Gastos registrados</h3>
+            <div class="table-scroll"><table class="table" data-ledger></table></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · CRM -->
+    <section class="demo" id="demo-crm" role="tabpanel" aria-labelledby="tab-crm" hidden>
+      <div class="demo__head">
+        <div>
+          <h2>Un agente que lee el correo y actúa</h2>
+          <p>No solo contesta: decide qué hacer, usa las herramientas del negocio y deja todo registrado. Mira cada paso que toma.</p>
+        </div>
+        <ol class="flow" data-flow>
+          <li>Correo</li><li>Entender</li><li>Buscar en CRM</li><li>Actuar</li><li>Responder</li>
+        </ol>
+      </div>
+
+      <div class="demo__body">
+        <div class="pane pane--inbox">
+          <div class="pane__bar"><span class="pane__title">Bandeja de entrada</span></div>
+          <ul class="inbox" data-inbox></ul>
+          <article class="email" data-email></article>
+          <div class="pane__foot"><button class="btn btn--signal" type="button" data-run>Pasárselo al agente</button></div>
+        </div>
+
+        <div class="pane pane--agent">
+          <div class="pane__bar"><span class="pane__title">Agente</span><span class="pane__meta" data-agent-state>en espera</span></div>
+          <ol class="log" data-log><li class="empty">Elige un correo y pásaselo al agente.</li></ol>
+          <div class="draft" data-draft hidden>
+            <h3 class="mini">Borrador de respuesta · para que lo apruebes</h3>
+            <p data-draft-text></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pane pane--crm">
+        <div class="pane__bar"><span class="pane__title">CRM</span></div>
+        <div class="table-scroll"><table class="table table--crm" data-crm></table></div>
+      </div>
+    </section>
+
+      </div>
+      </div>
+      <p class="showcase__note">Estas demos corren en tu navegador con datos de ejemplo. En un proyecto real se conectan a tu WhatsApp, tus documentos, tu correo y tu sistema.</p>
+    </section>
+
+    <section class="process wrap" id="como-trabajo">
+      <span class="eyebrow">Proceso</span>
+      <h2>Cómo trabajo</h2>
+      <ol class="process__list">
+        <li><span>01</span><h3>Diagnóstico sin costo</h3><p>Una llamada de 30 minutos. Me cuentas qué se hace a mano y te digo si se puede automatizar y cuánto costaría.</p></li>
+        <li><span>02</span><h3>Primera solución en dos semanas</h3><p>Precio fijo desde el inicio, sin sorpresas. Funcionando en tu negocio en dos semanas o menos.</p></li>
+        <li><span>03</span><h3>Soporte y mejora continua</h3><p>Una mensualidad para que siga funcionando y para automatizar lo siguiente.</p></li>
+      </ol>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <span class="eyebrow">Siguiente paso</span>
+        <h2>Una propuesta para tu<br><em>primer caso de uso</em></h2>
+        <p>En la primera llamada vemos juntos el trabajo manual que más horas le cuesta a tu negocio, y te propongo cómo hacerlo de forma automática.</p>
+        <a class="closing__bar" href="https://wa.me/525537215924?text=Hola%20David%2C%20vi%20tus%20demos%20y%20tengo%20un%20proceso%20que%20automatizar" target="_blank" rel="noopener">
+          <span>Escríbeme por WhatsApp</span>
+          <span class="closing__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <span>© 2026 David Peña Pedraza · Daluss</span>
+      <span class="foot__links"><a href="sobre-mi/">Sobre mí</a> · <a href="https://www.linkedin.com/in/pe%C3%B1a-pedraza-david/" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </footer>
+</body>
+</html>

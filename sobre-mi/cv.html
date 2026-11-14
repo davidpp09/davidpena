@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV · David Peña Pedraza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* CV de una página carta, con la composición del currículum de Brittany Chiang
+       y el vino del portafolio como color de acento. */
+    @page { size: letter; margin: 0; }
+    :root { --accent: #9f1239; --ink: #1c0f16; --text: #3f3338; --dim: #7a6870; --line: #f1e3e7; }
+    * { box-sizing: border-box; }
+    html { background: #e9e1e4; }
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: 8.5in; height: 11in; margin: 24px auto; padding: 0.5in 0.5in 0.4in; background: #fff; overflow: hidden; }
+    @media print { html { background: #fff; } .page { margin: 0; } }
+
+    h1, h2, h3, p, ul { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    b { font-weight: 600; color: var(--ink); }
+
+    .head { display: grid; grid-template-columns: 1fr 2.2in; gap: 0.3in; align-items: start; }
+    .head h1 { font-size: 42px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; color: var(--accent); }
+    .head .tag { margin-top: 12px; font-size: 11px; line-height: 1.45; max-width: 3.9in; }
+    .contact { list-style: none; padding: 0; font-size: 10.2px; line-height: 1.7; margin-top: 1px; }
+
+    .cols { display: grid; grid-template-columns: 1fr 2.2in; gap: 0.3in; margin-top: 0.24in; }
+    h2 { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 8px; letter-spacing: -0.01em; }
+    section + section { margin-top: 15px; }
+
+    .job + .job { margin-top: 11px; }
+    .role { font-size: 11.2px; line-height: 1.5; color: var(--ink); }
+    .role b { font-weight: 600; }
+    .when { margin-left: 4px; font-size: 9.2px; color: var(--dim); }
+    .bullets { margin-top: 4px; padding-left: 13px; font-size: 9.5px; line-height: 1.46; }
+    .bullets li + li { margin-top: 1.5px; }
+    .bullets li::marker { color: var(--accent); }
+
+    .side h3 { font-size: 10.6px; font-weight: 600; color: var(--ink); }
+    .side p { margin-top: 1px; font-size: 9.5px; line-height: 1.45; }
+    .side .item + .item { margin-top: 7px; }
+    .badge { display: inline-block; margin-left: 4px; padding: 0 5px; border-radius: 99px; background: var(--line); color: var(--accent); font-size: 8.4px; font-weight: 600; line-height: 1.6; vertical-align: 1px; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="head">
+      <div>
+        <h1>David Peña Pedraza</h1>
+        <p class="tag">Ingeniero en sistemas con enfoque backend y automatización con IA. Construyo sistemas que le quitan trabajo manual a los negocios y los pongo en producción.</p>
+      </div>
+      <ul class="contact">
+        <li>pedraza.david.pp@gmail.com</li>
+        <li>(55) 3721 5924</li>
+        <li>github.com/davidpp09</li>
+        <li>linkedin.com/in/peña-pedraza-david</li>
+      </ul>
+    </header>
+
+    <div class="cols">
+      <div>
+        <section>
+          <h2>Experiencia relevante</h2>
+
+          <div class="job">
+            <p class="role">Cofundador · <b>Daluss</b><span class="when">2026 — Presente</span></p>
+            <ul class="bullets">
+              <li>Cofundé con otros tres ingenieros de ESCOM una consultora que automatiza procesos manuales de PyMEs: diagnóstico gratuito, primera solución en dos semanas a precio fijo y soporte mensual.</li>
+              <li>Participo en la prospección de clientes, el diagnóstico de sus procesos y el diseño de soluciones a la medida, desde PyMEs industriales hasta clínicas.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="role">Desarrollador de sistemas · <b>Restaurante</b><span class="when">2024 — Presente</span></p>
+            <p class="role">Mejora de procesos operativos<span class="when">2020 — Presente</span></p>
+            <ul class="bullets">
+              <li>Diseñé y desarrollé RestFoodSystem, el punto de venta con el que opera el restaurante a diario: órdenes de mesa a cocina en tiempo real con WebSockets, cobro, tickets y roles con JWT.</li>
+              <li>Puse en producción un inventario que descuenta insumos por receta con cada venta; su kárdex concilió <b>160 de 160 movimientos</b> contra las recetas en el primer día.</li>
+              <li>Identifiqué cuellos de botella de la operación y consolidé el área de comida para llevar reestructurando sus flujos y canales digitales.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="role">Coordinador técnico · <b>SeniorCLI</b><span class="when">2026 · ESCOM</span></p>
+            <ul class="bullets">
+              <li>Coordiné a un equipo de siete personas en tres frentes: definí la arquitectura en Rust, los contratos entre frentes y una integración continua con 104 pruebas, clippy y cargo-deny.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Hackatones</h2>
+
+          <div class="job">
+            <p class="role"><b>Ghost Shopper</b> · LatamBuilds GTM Hackathon<span class="when">Mayo 2026</span><span class="badge">3.er lugar general</span></p>
+            <ul class="bullets">
+              <li>Agente de IA de "cliente misterioso": encuentra a los vendedores de una empresa, les llama con voz de ElevenLabs o les escribe por WhatsApp como cliente real, y califica cada conversación en un tablero.</li>
+              <li>Hecho en 24 horas contra equipos de México y Colombia; en una prueba real reveló que el <b>36% de los leads nunca recibió respuesta</b>.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="role"><b>Sentinel</b> · Hackathon 404: Threat Not Found<span class="when">Abril 2026</span></p>
+            <ul class="bullets">
+              <li>Motor híbrido que detecta reclutamiento criminal de menores en jerga mexicana: un SDK en el dispositivo analiza cada mensaje en <b>menos de 8 ms</b> y escala los casos dudosos a un LLM de 70B en menos de 2 s.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="role"><b>Synkro</b> · Logistics Hackathon, ASCM UPIICSA<span class="when">2025</span><span class="badge">3.er lugar</span></p>
+            <ul class="bullets">
+              <li>Responsable del backend de un inventario multisucursal para Calzando a México, patrocinado por IBM. También competí en ONE Latam G8, Kavak × OpenAI y AI Hackathon × Clara.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Otros proyectos</h2>
+
+          <div class="job">
+            <p class="role"><b>dpx</b> · Agente de IA en la terminal<span class="when">2026 · Personal</span></p>
+            <ul class="bullets">
+              <li>CLI en Rust con tres modos (code, hack y learn) y un router de modelos; orquesta llamadas asíncronas con tokio sin congelar la interfaz y comparé modelos en 144 corridas para elegir el mejor costo.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="role"><b>Detector de instrumentos musicales</b> · Señales<span class="when">2026 · ESCOM</span></p>
+            <ul class="bullets">
+              <li>Una ESP32 captura audio y lo transmite en vivo; un backend en Python calcula el espectro con SciPy y un Random Forest reconoce flauta, guitarra, teclado, violín o tambor.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="role"><b>GBN Audio Lab</b> · Redes<span class="when">2026 · ESCOM</span></p>
+            <ul class="bullets">
+              <li>Transferencia de MP3 por UDP con Go-Back-N en Java: ventana deslizante, retransmisión ante pérdidas simuladas e interfaz en Swing, respaldado por 54 pruebas.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side">
+        <section>
+          <h2>Habilidades</h2>
+          <div class="item"><h3>Lenguajes</h3><p>Java, JavaScript, TypeScript, Python, SQL, Rust, C</p></div>
+          <div class="item"><h3>Frameworks y librerías</h3><p>Spring Boot, Spring Security, JPA/Hibernate, Node.js, Express, React, Tailwind CSS</p></div>
+          <div class="item"><h3>IA y automatización</h3><p>Agentes, RAG, integración de LLMs (OpenAI, DeepSeek), flujos con WhatsApp y Google Sheets</p></div>
+          <div class="item"><h3>Datos e infraestructura</h3><p>MySQL, MariaDB, PostgreSQL, Supabase, Docker, Google Cloud, Oracle Cloud, Cloudflare Workers, Git</p></div>
+        </section>
+
+        <section>
+          <h2>Proyectos seleccionados</h2>
+          <div class="item"><h3>HazCuentas</h3><p>Diez calculadoras laborales con las tablas oficiales de 2026, en línea en hazcuentasmx.com</p></div>
+          <div class="item"><h3>Punto de venta para abarrotes</h3><p>Venta a granel, cortes de caja y reporte diario automático por correo</p></div>
+          <div class="item"><h3>Demos de automatización con IA</h3><p>Pedidos por WhatsApp, RAG sobre documentos, tickets a datos y un agente que llena el CRM</p></div>
+        </section>
+
+        <section>
+          <h2>Educación</h2>
+          <div class="item"><h3>ESCOM, IPN</h3><p>Ingeniería en Sistemas Computacionales · 5.º semestre · 2023 — Presente</p></div>
+          <div class="item"><h3>CECyT 3, IPN</h3><p>Técnico en Computación · 2020 — 2023</p></div>
+        </section>
+
+        <section>
+          <h2>Certificaciones y programas</h2>
+          <div class="item"><h3>Oracle Cloud Infrastructure 2025</h3><p>Certified Foundations Associate · 2025</p></div>
+          <div class="item"><h3>Oracle Next Education G8 · Alura</h3><p>ONE Tech Advanced, Back End, Java y Spring Framework · 2025</p></div>
+          <div class="item"><h3>Google Cloud</h3><p>Engineering Certificate · skill badges de Terraform y Data for ML APIs</p></div>
+          <div class="item"><h3>Samsung Innovation Campus</h3><p>Seleccionado · 2026</p></div>
+        </section>
+
+        <section>
+          <h2>Idiomas e intereses</h2>
+          <p>Español nativo, inglés avanzado (CELEX). Automatización con IA, comunidades tech (Talent Land, Mexico Tech Week), hackatones y piano.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
