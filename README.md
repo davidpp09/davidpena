@@ -21,8 +21,8 @@ Abre http://localhost:5174 y http://localhost:5174/sobre-mi/.
 node --test tests/
 ```
 
-## Publicar en Vercel
+## Publicar
 
-1. Sube esta carpeta a un repo nuevo en GitHub.
-2. En Vercel: **Add New → Project** → elige el repo → Framework Preset **Other**, sin build → **Deploy**.
-3. Cada `git push` vuelve a publicar.
+El repo `davidpp09/davidpena` está conectado al proyecto **davidpena** de Vercel. Cada `git push` a `main` publica solo en https://davidpenapedraza.vercel.app.
+
+`.vercelignore` deja fuera del sitio los archivos de trabajo (`SPEC.md`, `tests/`, este README y `.env*`).
